@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C55671021F5D73A0067AA50 /* MedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55670F21F5D73A0067AA50 /* MedalView.swift */; };
 		8C832E5521F17EBE002E99B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E5421F17EBE002E99B2 /* AppDelegate.swift */; };
 		8C832E5F21F17EBF002E99B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C832E5D21F17EBF002E99B2 /* LaunchScreen.storyboard */; };
 		8C832E6A21F17EBF002E99B2 /* ZanizimoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E6921F17EBF002E99B2 /* ZanizimoTests.swift */; };
 		8C832E7521F17EBF002E99B2 /* ZanizimoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E7421F17EBF002E99B2 /* ZanizimoUITests.swift */; };
 		8C832E8321F18154002E99B2 /* ZanizimoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8221F18154002E99B2 /* ZanizimoTabBarController.swift */; };
-		8C832E8521F18334002E99B2 /* TabOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8421F18334002E99B2 /* TabOneViewController.swift */; };
+		8C832E8521F18334002E99B2 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8421F18334002E99B2 /* CalendarViewController.swift */; };
 		8C832E8721F18343002E99B2 /* TabTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8621F18343002E99B2 /* TabTwoViewController.swift */; };
-		8C832E8921F18721002E99B2 /* TabThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8821F18721002E99B2 /* TabThreeViewController.swift */; };
+		8C832E8921F18721002E99B2 /* TrophiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8821F18721002E99B2 /* TrophiesViewController.swift */; };
 		8C832E8B21F18752002E99B2 /* TabFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8A21F18752002E99B2 /* TabFourViewController.swift */; };
 		8C832E8D21F18CD6002E99B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C832E8C21F18CD6002E99B2 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C55670F21F5D73A0067AA50 /* MedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalView.swift; sourceTree = "<group>"; };
 		8C832E5121F17EBE002E99B2 /* Zanizimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zanizimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C832E5421F17EBE002E99B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C832E5E21F17EBF002E99B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,9 +50,9 @@
 		8C832E7421F17EBF002E99B2 /* ZanizimoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZanizimoUITests.swift; sourceTree = "<group>"; };
 		8C832E7621F17EBF002E99B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C832E8221F18154002E99B2 /* ZanizimoTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZanizimoTabBarController.swift; sourceTree = "<group>"; };
-		8C832E8421F18334002E99B2 /* TabOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabOneViewController.swift; sourceTree = "<group>"; };
+		8C832E8421F18334002E99B2 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8C832E8621F18343002E99B2 /* TabTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTwoViewController.swift; sourceTree = "<group>"; };
-		8C832E8821F18721002E99B2 /* TabThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabThreeViewController.swift; sourceTree = "<group>"; };
+		8C832E8821F18721002E99B2 /* TrophiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophiesViewController.swift; sourceTree = "<group>"; };
 		8C832E8A21F18752002E99B2 /* TabFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFourViewController.swift; sourceTree = "<group>"; };
 		8C832E8C21F18CD6002E99B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,9 +110,10 @@
 				8C832E5D21F17EBF002E99B2 /* LaunchScreen.storyboard */,
 				8C832E6021F17EBF002E99B2 /* Info.plist */,
 				8C832E8C21F18CD6002E99B2 /* Assets.xcassets */,
-				8C832E8421F18334002E99B2 /* TabOneViewController.swift */,
+				8C832E8421F18334002E99B2 /* CalendarViewController.swift */,
 				8C832E8621F18343002E99B2 /* TabTwoViewController.swift */,
-				8C832E8821F18721002E99B2 /* TabThreeViewController.swift */,
+				8C832E8821F18721002E99B2 /* TrophiesViewController.swift */,
+				8C55670F21F5D73A0067AA50 /* MedalView.swift */,
 				8C832E8A21F18752002E99B2 /* TabFourViewController.swift */,
 			);
 			path = Zanizimo;
@@ -264,8 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C832E8521F18334002E99B2 /* TabOneViewController.swift in Sources */,
-				8C832E8921F18721002E99B2 /* TabThreeViewController.swift in Sources */,
+				8C832E8521F18334002E99B2 /* CalendarViewController.swift in Sources */,
+				8C832E8921F18721002E99B2 /* TrophiesViewController.swift in Sources */,
+				8C55671021F5D73A0067AA50 /* MedalView.swift in Sources */,
 				8C832E8721F18343002E99B2 /* TabTwoViewController.swift in Sources */,
 				8C832E8321F18154002E99B2 /* ZanizimoTabBarController.swift in Sources */,
 				8C832E8B21F18752002E99B2 /* TabFourViewController.swift in Sources */,
