@@ -15,6 +15,11 @@ class CalendarViewController: UINavigationController {
         super.viewDidLoad()
         self.title = "Home"
         
+        view = UIView()
+        
+        
+        view.backgroundColor = UIColor(named: "Purple")
+        
     }
     
 

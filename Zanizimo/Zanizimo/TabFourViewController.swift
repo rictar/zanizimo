@@ -15,6 +15,13 @@ class TabFourViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = "Share"
+        
+        view = UIView()
+        let imageView = MedalView()
+        imageView.contentMode = .scaleAspectFit
+        
+        
+        view.backgroundColor = UIColor(named: "Purple")
     }
     
 

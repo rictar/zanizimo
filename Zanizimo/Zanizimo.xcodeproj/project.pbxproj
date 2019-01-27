@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8C55671021F5D73A0067AA50 /* MedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55670F21F5D73A0067AA50 /* MedalView.swift */; };
 		8C832E5521F17EBE002E99B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E5421F17EBE002E99B2 /* AppDelegate.swift */; };
-		8C832E5F21F17EBF002E99B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C832E5D21F17EBF002E99B2 /* LaunchScreen.storyboard */; };
 		8C832E6A21F17EBF002E99B2 /* ZanizimoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E6921F17EBF002E99B2 /* ZanizimoTests.swift */; };
 		8C832E7521F17EBF002E99B2 /* ZanizimoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E7421F17EBF002E99B2 /* ZanizimoUITests.swift */; };
 		8C832E8321F18154002E99B2 /* ZanizimoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8221F18154002E99B2 /* ZanizimoTabBarController.swift */; };
@@ -17,7 +16,9 @@
 		8C832E8721F18343002E99B2 /* TabTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8621F18343002E99B2 /* TabTwoViewController.swift */; };
 		8C832E8921F18721002E99B2 /* TrophiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8821F18721002E99B2 /* TrophiesViewController.swift */; };
 		8C832E8B21F18752002E99B2 /* TabFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8A21F18752002E99B2 /* TabFourViewController.swift */; };
-		8C832E8D21F18CD6002E99B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C832E8C21F18CD6002E99B2 /* Assets.xcassets */; };
+		8C8562F321FD4D6C0077803E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8562F221FD4D6C0077803E /* Launch Screen.storyboard */; };
+		8C8562F721FD547E0077803E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C8562F621FD547E0077803E /* Assets.xcassets */; };
+		8C8562F921FD54C90077803E /* ODHG1L1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8562F821FD54C90077803E /* ODHG1L1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,6 @@
 		8C55670F21F5D73A0067AA50 /* MedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalView.swift; sourceTree = "<group>"; };
 		8C832E5121F17EBE002E99B2 /* Zanizimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zanizimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C832E5421F17EBE002E99B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C832E5E21F17EBF002E99B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C832E6021F17EBF002E99B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C832E6521F17EBF002E99B2 /* ZanizimoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZanizimoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C832E6921F17EBF002E99B2 /* ZanizimoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZanizimoTests.swift; sourceTree = "<group>"; };
@@ -54,7 +54,9 @@
 		8C832E8621F18343002E99B2 /* TabTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTwoViewController.swift; sourceTree = "<group>"; };
 		8C832E8821F18721002E99B2 /* TrophiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophiesViewController.swift; sourceTree = "<group>"; };
 		8C832E8A21F18752002E99B2 /* TabFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFourViewController.swift; sourceTree = "<group>"; };
-		8C832E8C21F18CD6002E99B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C8562F221FD4D6C0077803E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8C8562F621FD547E0077803E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C8562F821FD54C90077803E /* ODHG1L1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ODHG1L1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,14 +109,15 @@
 			children = (
 				8C832E5421F17EBE002E99B2 /* AppDelegate.swift */,
 				8C832E8221F18154002E99B2 /* ZanizimoTabBarController.swift */,
-				8C832E5D21F17EBF002E99B2 /* LaunchScreen.storyboard */,
 				8C832E6021F17EBF002E99B2 /* Info.plist */,
-				8C832E8C21F18CD6002E99B2 /* Assets.xcassets */,
 				8C832E8421F18334002E99B2 /* CalendarViewController.swift */,
 				8C832E8621F18343002E99B2 /* TabTwoViewController.swift */,
 				8C832E8821F18721002E99B2 /* TrophiesViewController.swift */,
 				8C55670F21F5D73A0067AA50 /* MedalView.swift */,
 				8C832E8A21F18752002E99B2 /* TabFourViewController.swift */,
+				8C8562F821FD54C90077803E /* ODHG1L1.png */,
+				8C8562F221FD4D6C0077803E /* Launch Screen.storyboard */,
+				8C8562F621FD547E0077803E /* Assets.xcassets */,
 			);
 			path = Zanizimo;
 			sourceTree = "<group>";
@@ -241,8 +244,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C832E8D21F18CD6002E99B2 /* Assets.xcassets in Resources */,
-				8C832E5F21F17EBF002E99B2 /* LaunchScreen.storyboard in Resources */,
+				8C8562F721FD547E0077803E /* Assets.xcassets in Resources */,
+				8C8562F321FD4D6C0077803E /* Launch Screen.storyboard in Resources */,
+				8C8562F921FD54C90077803E /* ODHG1L1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,17 +311,6 @@
 			targetProxy = 8C832E7121F17EBF002E99B2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8C832E5D21F17EBF002E99B2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C832E5E21F17EBF002E99B2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8C832E7721F17EBF002E99B2 /* Debug */ = {

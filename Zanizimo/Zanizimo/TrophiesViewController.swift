@@ -27,7 +27,7 @@ class TrophiesViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         
         
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor(named: "Purple")
         
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false

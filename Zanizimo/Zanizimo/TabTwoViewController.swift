@@ -15,6 +15,12 @@ class TabTwoViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = "Settings"
+        view = UIView()
+        let imageView = MedalView()
+        imageView.contentMode = .scaleAspectFit
+        
+        
+        view.backgroundColor = UIColor(named: "Purple")
     }
     
 

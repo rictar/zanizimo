@@ -9,31 +9,31 @@
 import UIKit
 
 class ZanizimoTabBarController: UITabBarController,UITabBarControllerDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.delegate = self
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Create Tab one
-        let tabOne = TabOneViewController()
+        let tabOne = CalendarViewController()
         
         let tabOneBarItem = UITabBarItem(title: "Home", image: UIImage(named: "calendar"), selectedImage: UIImage(named: "calendar"))
         
@@ -47,7 +47,7 @@ class ZanizimoTabBarController: UITabBarController,UITabBarControllerDelegate {
         tabTwo.tabBarItem = tabTwoBarItem2
         
         // Create Tab two
-        let tabThree = TabThreeViewController()
+        let tabThree = TrophiesViewController()
         let tabThreeBarItem3 = UITabBarItem(title: "Trophy", image: UIImage(named: "trophy"), selectedImage: UIImage(named: "trophy"))
         
         tabThree.tabBarItem = tabThreeBarItem3
@@ -59,19 +59,30 @@ class ZanizimoTabBarController: UITabBarController,UITabBarControllerDelegate {
         tabFour.tabBarItem = tabFourBarItem4
         
         
-        self.viewControllers = [tabOne, tabTwo, tabThree, tabFour]
+        let controllers = [tabOne,tabThree, tabFour,tabTwo]
+        
+        self.viewControllers = controllers
+        //        self.viewControllers = controllers.map { UINavigationController(rootViewController: $0)}
+        
+        
         UITabBar.appearance().tintColor = UIColor(named: "Orange")
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
-        UITabBar.appearance().backgroundColor = UIColor.black
-        UITabBar.appearance().barTintColor = UIColor.black
+        //UITabBar.appearance().backgroundColor = UIColor(named: "Purple")
+        UITabBar.appearance().barTintColor = UIColor(named: "Purple")
+        //UITabBar.appearance().barTintColor = .purple
+        UITabBar.appearance().isTranslucent = false
+        //UITabBar.appearance().is
         
-        self.navigationController?.navigationBar.barStyle = .blackTranslucent
         
+        
+        self.navigationController?.navigationBar.barStyle = .blackOpaque
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "Purple")
     }
     
     // UITabBarControllerDelegate method
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         print("Selected \(viewController.title!)")
     }
-
+    
 }
