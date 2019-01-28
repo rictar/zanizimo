@@ -1,0 +1,29 @@
+//
+//  FormViewController.swift
+//  Zanizimo
+//
+//  Created by Ricardo Yepez on 1/28/19.
+//  Copyright © 2019 Ricardo Yepez. All rights reserved.
+//
+
+import UIKit
+
+class FormViewController: UIViewController {
+
+    override func viewDidLoad() {
+        self.title = "Settings"
+        view.backgroundColor = UIColor(named: "Purple")
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

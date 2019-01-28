@@ -24,6 +24,13 @@
 	<string>Launch Screen</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to take pictures of food</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>montserrat_medium.otf</string>
+		<string>montserrat_regular.otf</string>
+		<string>montserrat_light.otf</string>
+		<string>montserrat_bold.otf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

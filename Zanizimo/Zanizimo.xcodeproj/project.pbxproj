@@ -17,7 +17,6 @@
 		8C832E8921F18721002E99B2 /* TrophiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8821F18721002E99B2 /* TrophiesViewController.swift */; };
 		8C832E8B21F18752002E99B2 /* TabFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8A21F18752002E99B2 /* TabFourViewController.swift */; };
 		8C8562F321FD4D6C0077803E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8562F221FD4D6C0077803E /* Launch Screen.storyboard */; };
-		8C8562F721FD547E0077803E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C8562F621FD547E0077803E /* Assets.xcassets */; };
 		8C8562F921FD54C90077803E /* ODHG1L1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8562F821FD54C90077803E /* ODHG1L1.png */; };
 		8C8562FE21FD61C50077803E /* UIImage+PixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8562FD21FD61C50077803E /* UIImage+PixelBuffer.swift */; };
 		8C85630321FD644D0077803E /* food.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8C85630221FD644D0077803E /* food.mlmodel */; };
@@ -31,6 +30,13 @@
 		8C85631521FE427C0077803E /* FoodValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85631421FE427C0077803E /* FoodValidator.swift */; };
 		8C85631821FE4E050077803E /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85631721FE4E050077803E /* TableSection.swift */; };
 		8C85631A21FE55E60077803E /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85631921FE55E60077803E /* Date+Helpers.swift */; };
+		8CC9FDEA21FEB40300D4620C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9FDE921FEB40300D4620C /* Assets.xcassets */; };
+		8CC9FDFC21FED9B100D4620C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9FDFB21FED9B100D4620C /* Main.storyboard */; };
+		8CC9FDFE21FEDA1800D4620C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9FDFD21FEDA1800D4620C /* OnboardingViewController.swift */; };
+		8CC9FE0021FEDB0100D4620C /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9FDFF21FEDB0100D4620C /* FormViewController.swift */; };
+		8CC9FE0A21FEDC5C00D4620C /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9FE0921FEDC5C00D4620C /* SlideModel.swift */; };
+		8CC9FE0C21FEDC8E00D4620C /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9FE0B21FEDC8E00D4620C /* Slide.swift */; };
+		8CC9FE0E21FEDCA700D4620C /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9FE0D21FEDCA700D4620C /* Slide.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +73,6 @@
 		8C832E8821F18721002E99B2 /* TrophiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophiesViewController.swift; sourceTree = "<group>"; };
 		8C832E8A21F18752002E99B2 /* TabFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFourViewController.swift; sourceTree = "<group>"; };
 		8C8562F221FD4D6C0077803E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		8C8562F621FD547E0077803E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C8562F821FD54C90077803E /* ODHG1L1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ODHG1L1.png; sourceTree = "<group>"; };
 		8C8562FD21FD61C50077803E /* UIImage+PixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+PixelBuffer.swift"; sourceTree = "<group>"; };
 		8C85630221FD644D0077803E /* food.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = food.mlmodel; path = "../../../../../../Downloads/EnumTableViewTutorial-master/EnumTableViewTutorial/food.mlmodel"; sourceTree = "<group>"; };
@@ -81,6 +86,17 @@
 		8C85631421FE427C0077803E /* FoodValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodValidator.swift; sourceTree = "<group>"; };
 		8C85631721FE4E050077803E /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		8C85631921FE55E60077803E /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
+		8CC9FDE921FEB40300D4620C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CC9FDFB21FED9B100D4620C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8CC9FDFD21FEDA1800D4620C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		8CC9FDFF21FEDB0100D4620C /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		8CC9FE0421FEDBFE00D4620C /* montserrat_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_regular.otf; sourceTree = "<group>"; };
+		8CC9FE0521FEDBFE00D4620C /* montserrat_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_bold.otf; sourceTree = "<group>"; };
+		8CC9FE0621FEDBFF00D4620C /* montserrat_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_medium.otf; sourceTree = "<group>"; };
+		8CC9FE0721FEDBFF00D4620C /* montserrat_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_light.otf; sourceTree = "<group>"; };
+		8CC9FE0921FEDC5C00D4620C /* SlideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideModel.swift; sourceTree = "<group>"; };
+		8CC9FE0B21FEDC8E00D4620C /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		8CC9FE0D21FEDCA700D4620C /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,10 +147,11 @@
 		8C832E5321F17EBE002E99B2 /* Zanizimo */ = {
 			isa = PBXGroup;
 			children = (
-				8C8562F621FD547E0077803E /* Assets.xcassets */,
+				8CC9FE0821FEDC4000D4620C /* ViewModels */,
+				8CC9FE0321FEDBF000D4620C /* Fonts */,
 				8C832E5421F17EBE002E99B2 /* AppDelegate.swift */,
-				8C8562F221FD4D6C0077803E /* Launch Screen.storyboard */,
 				8C832E6021F17EBF002E99B2 /* Info.plist */,
+				8CC9FDE921FEB40300D4620C /* Assets.xcassets */,
 				8C85630A21FD66840077803E /* Protocols */,
 				8C85630121FD641C0077803E /* CoreMLModel */,
 				8C8562FA21FD60380077803E /* Images */,
@@ -175,6 +192,10 @@
 		8C8562FB21FD605D0077803E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C8562F221FD4D6C0077803E /* Launch Screen.storyboard */,
+				8CC9FDFB21FED9B100D4620C /* Main.storyboard */,
+				8CC9FDFD21FEDA1800D4620C /* OnboardingViewController.swift */,
+				8CC9FDFF21FEDB0100D4620C /* FormViewController.swift */,
 				8C832E8221F18154002E99B2 /* ZanizimoTabBarController.swift */,
 				8C832E8421F18334002E99B2 /* CalendarViewController.swift */,
 				8C832E8621F18343002E99B2 /* TabTwoViewController.swift */,
@@ -185,6 +206,8 @@
 				8C85630621FD65C50077803E /* DayButton.swift */,
 				8C85630821FD664E0077803E /* DetailMenuview.swift */,
 				8C85630F21FD6AE60077803E /* DetailMenuViewController.swift */,
+				8CC9FE0D21FEDCA700D4620C /* Slide.xib */,
+				8CC9FE0B21FEDC8E00D4620C /* Slide.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +253,25 @@
 				8C85631721FE4E050077803E /* TableSection.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		8CC9FE0321FEDBF000D4620C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8CC9FE0521FEDBFE00D4620C /* montserrat_bold.otf */,
+				8CC9FE0721FEDBFF00D4620C /* montserrat_light.otf */,
+				8CC9FE0621FEDBFF00D4620C /* montserrat_medium.otf */,
+				8CC9FE0421FEDBFE00D4620C /* montserrat_regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8CC9FE0821FEDC4000D4620C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8CC9FE0921FEDC5C00D4620C /* SlideModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,9 +378,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C8562F721FD547E0077803E /* Assets.xcassets in Resources */,
+				8CC9FE0E21FEDCA700D4620C /* Slide.xib in Resources */,
 				8C8562F321FD4D6C0077803E /* Launch Screen.storyboard in Resources */,
+				8CC9FDEA21FEB40300D4620C /* Assets.xcassets in Resources */,
 				8C8562F921FD54C90077803E /* ODHG1L1.png in Resources */,
+				8CC9FDFC21FED9B100D4620C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,13 +408,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C832E8521F18334002E99B2 /* CalendarViewController.swift in Sources */,
+				8CC9FE0C21FEDC8E00D4620C /* Slide.swift in Sources */,
 				8C832E8921F18721002E99B2 /* TrophiesViewController.swift in Sources */,
 				8C85631821FE4E050077803E /* TableSection.swift in Sources */,
 				8C85630921FD664E0077803E /* DetailMenuview.swift in Sources */,
 				8C85631521FE427C0077803E /* FoodValidator.swift in Sources */,
 				8C55671021F5D73A0067AA50 /* MedalView.swift in Sources */,
 				8C832E8721F18343002E99B2 /* TabTwoViewController.swift in Sources */,
+				8CC9FE0A21FEDC5C00D4620C /* SlideModel.swift in Sources */,
+				8CC9FDFE21FEDA1800D4620C /* OnboardingViewController.swift in Sources */,
 				8C8562FE21FD61C50077803E /* UIImage+PixelBuffer.swift in Sources */,
+				8CC9FE0021FEDB0100D4620C /* FormViewController.swift in Sources */,
 				8C832E8321F18154002E99B2 /* ZanizimoTabBarController.swift in Sources */,
 				8C85630521FD65380077803E /* ContentView.swift in Sources */,
 				8C85631221FE3E360077803E /* String+CapitalizingFirstLetter.swift in Sources */,

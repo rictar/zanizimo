@@ -139,10 +139,12 @@ extension DetailMenuViewController:DetailMenuviewDelegate{
             preferredStyle: UIAlertController.Style.alert
         )
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
         alert.addAction(UIAlertAction(title: "Allow Camera", style: .cancel, handler: { (alert) -> Void in
             UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
         }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
         present(alert, animated: true, completion: nil)
     }
