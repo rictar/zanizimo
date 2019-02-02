@@ -20,6 +20,11 @@
 		8C1D2751220428F1001E4394 /* FormTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D2750220428F1001E4394 /* FormTag.swift */; };
 		8C1D275322047BD9001E4394 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D275222047BD9001E4394 /* CustomLabel.swift */; };
 		8C1D275522047D07001E4394 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D275422047D07001E4394 /* CustomTextField.swift */; };
+		8C54B143220604B400F27214 /* DefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54B142220604B400F27214 /* DefaultsStorage.swift */; };
+		8C54B1452206070000F27214 /* DefaultsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54B1442206070000F27214 /* DefaultsConstants.swift */; };
+		8C54B14822060F3000F27214 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54B14722060F3000F27214 /* MenuService.swift */; };
+		8C54B14A22060F5600F27214 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54B14922060F5600F27214 /* Client.swift */; };
+		8C54B14C22060FC000F27214 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C54B14B22060FC000F27214 /* CodableStorage.swift */; };
 		8C55671021F5D73A0067AA50 /* MedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55670F21F5D73A0067AA50 /* MedalView.swift */; };
 		8C784AA422006DC90012ECA3 /* Throphy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C784AA322006DC90012ECA3 /* Throphy.swift */; };
 		8C784AA622006F6F0012ECA3 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C784AA522006F6F0012ECA3 /* Meal.swift */; };
@@ -31,9 +36,8 @@
 		8C832E7521F17EBF002E99B2 /* ZanizimoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E7421F17EBF002E99B2 /* ZanizimoUITests.swift */; };
 		8C832E8321F18154002E99B2 /* ZanizimoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8221F18154002E99B2 /* ZanizimoTabBarController.swift */; };
 		8C832E8521F18334002E99B2 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8421F18334002E99B2 /* CalendarViewController.swift */; };
-		8C832E8721F18343002E99B2 /* TabTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8621F18343002E99B2 /* TabTwoViewController.swift */; };
 		8C832E8921F18721002E99B2 /* TrophiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8821F18721002E99B2 /* TrophiesViewController.swift */; };
-		8C832E8B21F18752002E99B2 /* TabFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8A21F18752002E99B2 /* TabFourViewController.swift */; };
+		8C832E8B21F18752002E99B2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C832E8A21F18752002E99B2 /* ShareViewController.swift */; };
 		8C8562F321FD4D6C0077803E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8562F221FD4D6C0077803E /* Launch Screen.storyboard */; };
 		8C8562F921FD54C90077803E /* ODHG1L1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8562F821FD54C90077803E /* ODHG1L1.png */; };
 		8C8562FE21FD61C50077803E /* UIImage+PixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8562FD21FD61C50077803E /* UIImage+PixelBuffer.swift */; };
@@ -49,7 +53,7 @@
 		8C85631821FE4E050077803E /* TypeMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85631721FE4E050077803E /* TypeMeal.swift */; };
 		8C85631A21FE55E60077803E /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C85631921FE55E60077803E /* Date+Helpers.swift */; };
 		8CC9FDEA21FEB40300D4620C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9FDE921FEB40300D4620C /* Assets.xcassets */; };
-		8CC9FDFC21FED9B100D4620C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9FDFB21FED9B100D4620C /* Main.storyboard */; };
+		8CC9FDFC21FED9B100D4620C /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC9FDFB21FED9B100D4620C /* Onboarding.storyboard */; };
 		8CC9FDFE21FEDA1800D4620C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9FDFD21FEDA1800D4620C /* OnboardingViewController.swift */; };
 		8CC9FE0021FEDB0100D4620C /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9FDFF21FEDB0100D4620C /* FormViewController.swift */; };
 		8CC9FE0A21FEDC5C00D4620C /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC9FE0921FEDC5C00D4620C /* SlideModel.swift */; };
@@ -88,6 +92,11 @@
 		8C1D2750220428F1001E4394 /* FormTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTag.swift; sourceTree = "<group>"; };
 		8C1D275222047BD9001E4394 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		8C1D275422047D07001E4394 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		8C54B142220604B400F27214 /* DefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsStorage.swift; sourceTree = "<group>"; };
+		8C54B1442206070000F27214 /* DefaultsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsConstants.swift; sourceTree = "<group>"; };
+		8C54B14722060F3000F27214 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
+		8C54B14922060F5600F27214 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		8C54B14B22060FC000F27214 /* CodableStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableStorage.swift; sourceTree = "<group>"; };
 		8C55670F21F5D73A0067AA50 /* MedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalView.swift; sourceTree = "<group>"; };
 		8C784AA322006DC90012ECA3 /* Throphy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throphy.swift; sourceTree = "<group>"; };
 		8C784AA522006F6F0012ECA3 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
@@ -105,13 +114,12 @@
 		8C832E7621F17EBF002E99B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C832E8221F18154002E99B2 /* ZanizimoTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZanizimoTabBarController.swift; sourceTree = "<group>"; };
 		8C832E8421F18334002E99B2 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		8C832E8621F18343002E99B2 /* TabTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTwoViewController.swift; sourceTree = "<group>"; };
 		8C832E8821F18721002E99B2 /* TrophiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophiesViewController.swift; sourceTree = "<group>"; };
-		8C832E8A21F18752002E99B2 /* TabFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFourViewController.swift; sourceTree = "<group>"; };
+		8C832E8A21F18752002E99B2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		8C8562F221FD4D6C0077803E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8C8562F821FD54C90077803E /* ODHG1L1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ODHG1L1.png; sourceTree = "<group>"; };
 		8C8562FD21FD61C50077803E /* UIImage+PixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+PixelBuffer.swift"; sourceTree = "<group>"; };
-		8C85630221FD644D0077803E /* food.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = food.mlmodel; path = "../../../../../../Downloads/EnumTableViewTutorial-master/EnumTableViewTutorial/food.mlmodel"; sourceTree = "<group>"; };
+		8C85630221FD644D0077803E /* food.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = food.mlmodel; path = Zanizimo/CoreMLModel/food.mlmodel; sourceTree = SOURCE_ROOT; };
 		8C85630421FD65380077803E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8C85630621FD65C50077803E /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
 		8C85630821FD664E0077803E /* DetailMenuview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMenuview.swift; sourceTree = "<group>"; };
@@ -123,13 +131,9 @@
 		8C85631721FE4E050077803E /* TypeMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeMeal.swift; sourceTree = "<group>"; };
 		8C85631921FE55E60077803E /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		8CC9FDE921FEB40300D4620C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8CC9FDFB21FED9B100D4620C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8CC9FDFB21FED9B100D4620C /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		8CC9FDFD21FEDA1800D4620C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8CC9FDFF21FEDB0100D4620C /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
-		8CC9FE0421FEDBFE00D4620C /* montserrat_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_regular.otf; sourceTree = "<group>"; };
-		8CC9FE0521FEDBFE00D4620C /* montserrat_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_bold.otf; sourceTree = "<group>"; };
-		8CC9FE0621FEDBFF00D4620C /* montserrat_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_medium.otf; sourceTree = "<group>"; };
-		8CC9FE0721FEDBFF00D4620C /* montserrat_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_light.otf; sourceTree = "<group>"; };
 		8CC9FE0921FEDC5C00D4620C /* SlideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideModel.swift; sourceTree = "<group>"; };
 		8CC9FE0B21FEDC8E00D4620C /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		8CC9FE0D21FEDCA700D4620C /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
@@ -165,8 +169,61 @@
 			children = (
 				8C0CAB1222008F2600FAB966 /* ImageStorage.swift */,
 				8C0CAB1422008F5600FAB966 /* StorageType.swift */,
+				8C54B142220604B400F27214 /* DefaultsStorage.swift */,
+				8C54B14B22060FC000F27214 /* CodableStorage.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		8C54B13F2206014200F27214 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8C8562F221FD4D6C0077803E /* Launch Screen.storyboard */,
+				8CC9FDFB21FED9B100D4620C /* Onboarding.storyboard */,
+				8C1D274E22041E95001E4394 /* Form.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8C54B1402206015D00F27214 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C85630F21FD6AE60077803E /* DetailMenuViewController.swift */,
+				8C832E8221F18154002E99B2 /* ZanizimoTabBarController.swift */,
+				8CC9FDFD21FEDA1800D4620C /* OnboardingViewController.swift */,
+				8C832E8421F18334002E99B2 /* CalendarViewController.swift */,
+				8CC9FDFF21FEDB0100D4620C /* FormViewController.swift */,
+				8C832E8821F18721002E99B2 /* TrophiesViewController.swift */,
+				8C832E8A21F18752002E99B2 /* ShareViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8C54B141220601A300F27214 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C55670F21F5D73A0067AA50 /* MedalView.swift */,
+				8C85630421FD65380077803E /* ContentView.swift */,
+				8C85630621FD65C50077803E /* DayButton.swift */,
+				8C85630821FD664E0077803E /* DetailMenuview.swift */,
+				8CC9FE0D21FEDCA700D4620C /* Slide.xib */,
+				8CC9FE0B21FEDC8E00D4620C /* Slide.swift */,
+				8C0CAB182201CFFD00FAB966 /* MealTableViewCell.swift */,
+				8C0CAB192201CFFD00FAB966 /* MealTableViewCell.xib */,
+				8C1D274C22041DC0001E4394 /* TimePickerView.swift */,
+				8C1D275222047BD9001E4394 /* CustomLabel.swift */,
+				8C1D275422047D07001E4394 /* CustomTextField.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		8C54B14622060F0E00F27214 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8C54B14722060F3000F27214 /* MenuService.swift */,
+				8C54B14922060F5600F27214 /* Client.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		8C784AA222006D8A0012ECA3 /* Model */ = {
@@ -206,10 +263,10 @@
 				8C832E5421F17EBE002E99B2 /* AppDelegate.swift */,
 				8C832E6021F17EBF002E99B2 /* Info.plist */,
 				8CC9FDE921FEB40300D4620C /* Assets.xcassets */,
+				8C54B14622060F0E00F27214 /* Network */,
 				8C0CAB1122008F0B00FAB966 /* Storage */,
 				8C85630A21FD66840077803E /* Protocols */,
 				8CC9FE0821FEDC4000D4620C /* ViewModels */,
-				8CC9FE0321FEDBF000D4620C /* Fonts */,
 				8C85630121FD641C0077803E /* CoreMLModel */,
 				8C8562FA21FD60380077803E /* Images */,
 				8C8562FB21FD605D0077803E /* Views */,
@@ -250,28 +307,9 @@
 		8C8562FB21FD605D0077803E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8C8562F221FD4D6C0077803E /* Launch Screen.storyboard */,
-				8CC9FDFB21FED9B100D4620C /* Main.storyboard */,
-				8C1D274E22041E95001E4394 /* Form.storyboard */,
-				8CC9FDFD21FEDA1800D4620C /* OnboardingViewController.swift */,
-				8CC9FDFF21FEDB0100D4620C /* FormViewController.swift */,
-				8C832E8221F18154002E99B2 /* ZanizimoTabBarController.swift */,
-				8C832E8421F18334002E99B2 /* CalendarViewController.swift */,
-				8C832E8621F18343002E99B2 /* TabTwoViewController.swift */,
-				8C832E8821F18721002E99B2 /* TrophiesViewController.swift */,
-				8C832E8A21F18752002E99B2 /* TabFourViewController.swift */,
-				8C55670F21F5D73A0067AA50 /* MedalView.swift */,
-				8C85630421FD65380077803E /* ContentView.swift */,
-				8C85630621FD65C50077803E /* DayButton.swift */,
-				8C85630821FD664E0077803E /* DetailMenuview.swift */,
-				8C85630F21FD6AE60077803E /* DetailMenuViewController.swift */,
-				8CC9FE0D21FEDCA700D4620C /* Slide.xib */,
-				8CC9FE0B21FEDC8E00D4620C /* Slide.swift */,
-				8C0CAB182201CFFD00FAB966 /* MealTableViewCell.swift */,
-				8C0CAB192201CFFD00FAB966 /* MealTableViewCell.xib */,
-				8C1D274C22041DC0001E4394 /* TimePickerView.swift */,
-				8C1D275222047BD9001E4394 /* CustomLabel.swift */,
-				8C1D275422047D07001E4394 /* CustomTextField.swift */,
+				8C54B13F2206014200F27214 /* Storyboards */,
+				8C54B1402206015D00F27214 /* Controllers */,
+				8C54B141220601A300F27214 /* Custom Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,19 +357,9 @@
 			children = (
 				8C85631721FE4E050077803E /* TypeMeal.swift */,
 				8C1D2750220428F1001E4394 /* FormTag.swift */,
+				8C54B1442206070000F27214 /* DefaultsConstants.swift */,
 			);
 			path = Enums;
-			sourceTree = "<group>";
-		};
-		8CC9FE0321FEDBF000D4620C /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				8CC9FE0521FEDBFE00D4620C /* montserrat_bold.otf */,
-				8CC9FE0721FEDBFF00D4620C /* montserrat_light.otf */,
-				8CC9FE0621FEDBFF00D4620C /* montserrat_medium.otf */,
-				8CC9FE0421FEDBFE00D4620C /* montserrat_regular.otf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		8CC9FE0821FEDC4000D4620C /* ViewModels */ = {
@@ -454,7 +482,7 @@
 				8CC9FDEA21FEB40300D4620C /* Assets.xcassets in Resources */,
 				8C1D274F22041E95001E4394 /* Form.storyboard in Resources */,
 				8C8562F921FD54C90077803E /* ODHG1L1.png in Resources */,
-				8CC9FDFC21FED9B100D4620C /* Main.storyboard in Resources */,
+				8CC9FDFC21FED9B100D4620C /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,8 +512,10 @@
 				8CC9FE0C21FEDC8E00D4620C /* Slide.swift in Sources */,
 				8C832E8921F18721002E99B2 /* TrophiesViewController.swift in Sources */,
 				8C85631821FE4E050077803E /* TypeMeal.swift in Sources */,
+				8C54B143220604B400F27214 /* DefaultsStorage.swift in Sources */,
 				8C85630921FD664E0077803E /* DetailMenuview.swift in Sources */,
 				8C784AA622006F6F0012ECA3 /* Meal.swift in Sources */,
+				8C54B14A22060F5600F27214 /* Client.swift in Sources */,
 				8C784AA822006F890012ECA3 /* DayMenu.swift in Sources */,
 				8C85631521FE427C0077803E /* FoodValidator.swift in Sources */,
 				8C0CAB17220166E100FAB966 /* MealDelegate.swift in Sources */,
@@ -493,7 +523,6 @@
 				8C1D2751220428F1001E4394 /* FormTag.swift in Sources */,
 				8C784AA422006DC90012ECA3 /* Throphy.swift in Sources */,
 				8C55671021F5D73A0067AA50 /* MedalView.swift in Sources */,
-				8C832E8721F18343002E99B2 /* TabTwoViewController.swift in Sources */,
 				8CC9FE0A21FEDC5C00D4620C /* SlideModel.swift in Sources */,
 				8CC9FDFE21FEDA1800D4620C /* OnboardingViewController.swift in Sources */,
 				8C8562FE21FD61C50077803E /* UIImage+PixelBuffer.swift in Sources */,
@@ -504,12 +533,15 @@
 				8C832E8321F18154002E99B2 /* ZanizimoTabBarController.swift in Sources */,
 				8C85630521FD65380077803E /* ContentView.swift in Sources */,
 				8C784AAA22006F950012ECA3 /* WeekMenu.swift in Sources */,
+				8C54B14C22060FC000F27214 /* CodableStorage.swift in Sources */,
 				8C0CAB1A2201CFFD00FAB966 /* MealTableViewCell.swift in Sources */,
+				8C54B14822060F3000F27214 /* MenuService.swift in Sources */,
 				8C1D275522047D07001E4394 /* CustomTextField.swift in Sources */,
 				8C85631221FE3E360077803E /* String+CapitalizingFirstLetter.swift in Sources */,
-				8C832E8B21F18752002E99B2 /* TabFourViewController.swift in Sources */,
+				8C832E8B21F18752002E99B2 /* ShareViewController.swift in Sources */,
 				8C85630E21FD699B0077803E /* UIImageView+Rounded.swift in Sources */,
 				8C832E5521F17EBE002E99B2 /* AppDelegate.swift in Sources */,
+				8C54B1452206070000F27214 /* DefaultsConstants.swift in Sources */,
 				8C784AAC220075410012ECA3 /* MealMock.swift in Sources */,
 				8C85631021FD6AE60077803E /* DetailMenuViewController.swift in Sources */,
 				8C85631A21FE55E60077803E /* Date+Helpers.swift in Sources */,

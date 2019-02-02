@@ -13,14 +13,7 @@ class DetailMenuview: UIView {
     private var didSetupConstraints = false
     
     var imageView:UIImageView!
-    
-//    var nameLabel : UILabel!
-//    var scheduleLabel : UILabel!
-//    var typeMealLabel : UILabel!
-    
-//    var stackView : UIStackView!
     var tableView: UITableView!
-//    var ingredients : UITextView!
     var button : UIButton!
     
     
@@ -51,25 +44,6 @@ class DetailMenuview: UIView {
     
     func setupView() {
         
-//        var myLabel = UILabel(frame: CGRect.zero)
-//        var imageView = UIImageView(image: UIImage(named: "imagen1"))
-//        var button = UIButton(type: UIButton.ButtonType.custom)
-        
-//        nameLabel = UILabel(frame: CGRect.zero)
-//        nameLabel.text = "nameLabel"
-//        nameLabel.textColor = UIColor.white
-//        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-//
-//        scheduleLabel = UILabel(frame: CGRect.zero)
-//        scheduleLabel.text = "scheduleLabel"
-//        scheduleLabel.textColor = UIColor.white
-//        scheduleLabel.translatesAutoresizingMaskIntoConstraints = false
-//
-//        typeMealLabel = UILabel(frame: CGRect.zero)
-//        typeMealLabel.text = "nameLabel"
-//        typeMealLabel.textColor = UIColor.white
-//        typeMealLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         button = UIButton(type: UIButton.ButtonType.custom)
         button.setTitle("Take food photo", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -82,33 +56,12 @@ class DetailMenuview: UIView {
         imageView = UIImageView(image: UIImage(named: "imagen1"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
-//        stackView = UIStackView(arrangedSubviews: [nameLabel,scheduleLabel,typeMealLabel])
-//        stackView.alignment = .fill
-//        stackView.distribution = .fill
-//        stackView.axis = .vertical
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-        
         tableView = UITableView()
         tableView.backgroundColor = UIColor(named: "Purple")
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        //ingredients = UITextView(frame: CGRect(x: 20.0, y: 90.0, width: 250.0, height: 100.0))
-//        ingredients.automaticallyAdjustsScrollViewInsets = false
-        
-//        ingredients.center = self.view.center
-//        ingredients = UITextView()
-        
-//        ingredients.textAlignment = NSTextAlignment.justified
-        
-//        ingredients.backgroundColor = UIColor.lightGray
-        
-//        ingredients.textColor = UIColor.white
-//        ingredients.translatesAutoresizingMaskIntoConstraints = false
-//        ingredients.text = "Muhcos ingredients"
         
         tableView.tableFooterView = UIView(frame: .zero)
         self.addSubview(imageView)
-//        self.addSubview(stackView)
-//        self.addSubview(ingredients)
         self.addSubview(tableView)
         self.addSubview(button)
     }
@@ -135,10 +88,8 @@ class DetailMenuview: UIView {
             tableView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 0),
             tableView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 70),
             button.topAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 1.0),
-            button.centerXAnchor.constraint(equalTo: self.layoutMarginsGuide.centerXAnchor)
-
-            
-            
+            button.centerXAnchor.constraint(equalTo: self.layoutMarginsGuide.centerXAnchor),
+            button.widthAnchor.constraint(equalTo: self.layoutMarginsGuide.widthAnchor, multiplier: 1.0, constant: 0)
             ])
     }
     

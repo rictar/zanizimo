@@ -15,6 +15,7 @@ class DetailMenuViewController: UIViewController {
     var detailMenu:DetailMenuview!
     var meal:Meal!
     var schedule:String!
+    var day:Date!
     
     var mealTable : [MealTable]!
     
@@ -52,8 +53,9 @@ class DetailMenuViewController: UIViewController {
             self?.detailMenu.imageView.image = img
         }
         
-        if meal.isChecked!{
-            detailMenu.button.isEnabled = true
+        if (meal.isChecked! || !day.isActualTime(hour: Int(schedule)!)) {
+            detailMenu.button.isEnabled = false
+            detailMenu.button.backgroundColor = UIColor.gray
         }
         
         view.addSubview(detailMenu)
@@ -81,7 +83,7 @@ class DetailMenuViewController: UIViewController {
         if isValid{
             delegate?.checkMeal()
             navigationController?.popViewController(animated: true)
-            
+            return 
         }
         
         let alert = UIAlertController(title: "Error", message: "The captured image does not correspond with food", preferredStyle: .alert)
@@ -93,7 +95,7 @@ class DetailMenuViewController: UIViewController {
             self.present(imagePickerView, animated: true, completion: nil)
         }
         
-        let cancelAction = UIAlertAction(title: "cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
         present(alert,animated: true)

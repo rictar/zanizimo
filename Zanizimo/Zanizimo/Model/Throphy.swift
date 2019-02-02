@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Throphy {
+struct Throphy:Codable {
     let name:String
     let number:Int
     

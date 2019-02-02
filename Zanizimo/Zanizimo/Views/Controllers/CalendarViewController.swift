@@ -23,8 +23,6 @@ class CalendarViewController: UIViewController {
     var containerView = UIView(frame: CGRect.zero)
     
     let sectionHeaderHeight: CGFloat = 20
-    //Cambiar por DayMenu
-    //var data = [TypeMeal: [[String: String]]]()
     
     var weekMenu : WeekMenu!
     
@@ -36,8 +34,11 @@ class CalendarViewController: UIViewController {
             setupContainerView()
             didSetupview = true
             //MockData
-            weekMenu = MealMock.createWeekMenu()
-            //sortData()
+            if let res = CodableStorage<WeekMenu>.permanent(filename: "weekMenu.json").load(){
+                weekMenu = res
+            }
+            //Llamar cuando se tenga el api
+            //loadData()
         }
         
         self.navigationController?.navigationBar.barStyle = .blackOpaque
@@ -45,27 +46,34 @@ class CalendarViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(named: "Purple")
     }
     
+    
+    func loadData() {
+        MenuService.shared.all { [weak self] menu in
+            self?.weekMenu = menu
+            self?.tableView.reloadData()
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if let res = CodableStorage<WeekMenu>.permanent(filename: "weekMenu.json").load(){
+            weekMenu = res
+        }
+        //tableView.reloadData()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.addSubview(containerView)
-//        navigationController!.navigationBar.addSubview(containerView)
         tableView.reloadData()
     }
     
+    
+    
     func setupTableView(){
         view.backgroundColor = UIColor(named: "Purple")
-        
-        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
-        let displayWidth: CGFloat = self.view.frame.width
-        let displayHeight: CGFloat = self.view.frame.height
-        
-        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight - barHeight))
-        
-        self.edgesForExtendedLayout = .bottom
-        self.extendedLayoutIncludesOpaqueBars = false
-        tableView.contentInsetAdjustmentBehavior = .automatic
-        tableView.isScrollEnabled = true
-        
+        tableView = UITableView(frame: self.view.safeAreaLayoutGuide.layoutFrame)
+        tableView.autoresizingMask = UIView.AutoresizingMask.flexibleHeight
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.dataSource = self
         tableView.delegate = self
@@ -111,15 +119,6 @@ class CalendarViewController: UIViewController {
         
         return date.getDay(count)
     }
-    
-    //MockData
-//    func sortData() {
-//        data[.breakfast] = FoodData.filter({ $0["meal"] == "breakfast" })
-//        data[.snackOne] = FoodData.filter({ $0["meal"] == "snackOne" })
-//        data[.lunch] = FoodData.filter({ $0["meal"] == "lunch" })
-//        data[.snackTwo] = FoodData.filter({ $0["meal"] == "snackTwo" })
-//        data[.dinner] = FoodData.filter({ $0["meal"] == "dinner" })
-//    }
     
     @objc func buttonTapped(_ sender: DayButton) {
         let newIndex = buttons.index(of: sender) ?? 0
@@ -176,18 +175,14 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func checkCell(_ cell:UITableViewCell){
-//        let size: CGFloat = 26
-//        let digits = CGFloat( 1 ) // digits in the label
-//        let width = max(size, 0.7 * size * digits) // perfect circle is smallest allowed
-//        let badge = UILabel(frame:CGRect(x: 0, y: 0, width: width, height: size))
-//        //badge.text = "1"
-//        badge.layer.cornerRadius = size / 2
-//        badge.layer.masksToBounds = true
-//        badge.textAlignment = .center
-//        badge.textColor = UIColor.white
-//        badge.backgroundColor = UIColor.green
         let badgeImage = UIImageView(image:UIImage(named: "carrot"))
         cell.accessoryView = badgeImage
+    }
+    
+    func unCheckCell(_ cell:UITableViewCell){
+        cell.accessoryView = nil
+        cell.accessoryType = UITableViewCell.AccessoryType.none
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -199,7 +194,6 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         }()
         let dayMenu = weekMenu.getMenuForDay(day: selectedIndex)
         if let food = dayMenu?.dayMenu[indexPath.section] {
-//            food.isChecked = true
             
             
             if let titleLabel = cell.textLabel {
@@ -211,21 +205,13 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
                 titleLabel.layer.cornerRadius = 10
                 titleLabel.clipsToBounds = true
             }
-//            if let subtitleLabel = cell.detailTextLabel {
-//                //Mark
-//                //Recover information from UserDefault
-//                let defaults = UserDefaults.standard
-//
-//                subtitleLabel.text = defaults.string(forKey: "com.mx.rictar.Zanizimo.\(food.typeMeal.getKeyName())")
-//                subtitleLabel.textColor = UIColor.black
-//                subtitleLabel.backgroundColor = UIColor.clear
-//            }
             food.getImage { [weak cell] (img) in
                 cell?.backgroundView = UIImageView(image: img)
             }
-            //cell.backgroundView = UIImageView(image: UIImage(named: "imagen1"))
             if food.isChecked ?? false{
                 checkCell(cell)
+            }else{
+                unCheckCell(cell)
             }
             
         }
@@ -233,7 +219,7 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return self.view.frame.height / 5
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -248,6 +234,7 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
             viewController.meal = food
             let defaults = UserDefaults.standard
             viewController.schedule = defaults.string(forKey: "com.mx.rictar.Zanizimo.\(food.typeMeal.getKeyName())")
+            viewController.day = getDay(selectedIndex+1)
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         
@@ -256,7 +243,14 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension CalendarViewController:MealDelegate{
     func checkMeal() {
-        weekMenu.check(day: selectedIndex, meal: selectedMeal)
+        self.weekMenu.check(day: self.selectedIndex, meal: self.selectedMeal)
+        //CodableStorage<WeekMenu>.permanent(filename: "weekMenu.json").save(data: self.weekMenu)
+        DispatchQueue.global( qos: .background).async { [weak self] in
+            CodableStorage<WeekMenu>.permanent(filename: "weekMenu.json").save(data: (self?.weekMenu)!)
+        }
+        
+        
+        
     }
     
     

@@ -20,32 +20,23 @@ class ImageStore {
     }
     
     func setImage(_ image: UIImage, forKey key: String) {
-//        print("[\(key)] Write on memory...")
         cache.setObject(image, forKey: key as NSString)
         let url = imageURL(forKey: key)
         
         if let data = image.pngData() {
-            // if let data = image.jpegData(compressionQuality: 0.75) {
-            // if let data = UIImageJPEGRepresentation(image, 0.75) {
-//            print("[\(key)] Write on disk...")
             try? data.write(to: url, options: [.atomic])
         }
     }
     
     func image(forKey key: String) -> UIImage? {
-//        print("[\(key)] Read from memory...")
         if let existingImage = cache.object(forKey: key as NSString) {
             return existingImage
         }
         
         let url = imageURL(forKey: key)
-        
-//        print("[\(key)] Read from disk...")
         guard let imageFromDisk = UIImage(contentsOfFile: url.path) else {
             return nil
         }
-        
-//        print("[\(key)] Write on memory...")
         cache.setObject(imageFromDisk, forKey: key as NSString)
         return imageFromDisk
     }

@@ -40,4 +40,11 @@ extension Date{
         return day == currentDay
     }
     
+    func isActualTime(hour:Int) -> Bool{
+        let currentHour = Calendar.current.component(.hour, from: Date())
+        
+        return self.isCurrentDay() && (hour >= currentHour - 1) && (hour <= currentHour+1)
+        
+    }
+    
 }

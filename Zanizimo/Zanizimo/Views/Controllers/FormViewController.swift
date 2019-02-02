@@ -30,10 +30,6 @@ class FormViewController: UIViewController {
     var picker: ZanizimoPickerView?
     var pickerAccessory: UIToolbar?
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Settings"
@@ -67,12 +63,25 @@ class FormViewController: UIViewController {
         setPickerFor(textField: dinnerTimeInput,array: timeData)
         setupTextField(textField: nameInput)
         
+        recoverDefaults()
+        
+        
     }
     
     func setupTextField(textField:UITextField){
-        //
         UITextField.appearance().backgroundColor = UIColor(named: "Purple")
         
+    }
+    
+    func recoverDefaults(){
+        nameInput.text = DefaultsStorage.recover(key: DefaultsConstants.name.rawValue)
+        sexInput.text = DefaultsStorage.recover(key: DefaultsConstants.sex.rawValue)
+        weightInput.text = DefaultsStorage.recover(key: DefaultsConstants.weight.rawValue)
+        breakfastTimeInput.text = DefaultsStorage.recover(key: DefaultsConstants.breakfastTime.rawValue)
+        snackOneTimeInput.text = DefaultsStorage.recover(key: DefaultsConstants.snackTime.rawValue)
+        lunchTimeInput.text = DefaultsStorage.recover(key: DefaultsConstants.lunchTime.rawValue)
+        snackTwoTimeInput.text = DefaultsStorage.recover(key: DefaultsConstants.snackTwo.rawValue)
+        dinnerTimeInput.text = DefaultsStorage.recover(key: DefaultsConstants.dinner.rawValue)
     }
     
     func setPickerFor(textField:UITextField,array:[String]){
@@ -87,7 +96,6 @@ class FormViewController: UIViewController {
         pickerAccessory = UIToolbar()
         pickerAccessory?.autoresizingMask = .flexibleHeight
         
-        //this customization is optional
         pickerAccessory?.barStyle = .default
         pickerAccessory?.barTintColor = UIColor(named: "Purple2")
         pickerAccessory?.backgroundColor = UIColor.red
@@ -100,12 +108,11 @@ class FormViewController: UIViewController {
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(FormViewController.cancelBtnClicked(_:)))
         cancelButton.tintColor = UIColor.white
         cancelButton.tag = textField.tag
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil) //a flexible space between the two buttons
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(FormViewController.doneBtnClicked(_:)))
         doneButton.tintColor = UIColor.white
         doneButton.tag = textField.tag
         
-        //Add the items to the toolbar
         pickerAccessory?.items = [cancelButton, flexSpace, doneButton]
         
         textField.inputAccessoryView = pickerAccessory
@@ -153,36 +160,29 @@ class FormViewController: UIViewController {
     
     
     @IBAction func save(_ sender: UIButton) {
-        
         let name = nameInput.text
-        saveData(key: "name", value: name!)
+        DefaultsStorage.save(key: DefaultsConstants.name.rawValue, value: name!)
         let sex = sexInput.text
-        saveData(key: "sex", value: sex!)
+        DefaultsStorage.save(key: DefaultsConstants.sex.rawValue, value: sex!)
         let weight = weightInput.text
-        saveData(key: "weight", value: weight!)
+        DefaultsStorage.save(key: DefaultsConstants.weight.rawValue, value: weight!)
         let breakfastTime = breakfastTimeInput.text
-        saveData(key: "breakfastTime", value: breakfastTime!)
+        DefaultsStorage.save(key: DefaultsConstants.breakfastTime.rawValue, value: breakfastTime!)
         let snackTime = snackOneTimeInput.text
-        saveData(key: "snackTime", value: snackTime!)
+        DefaultsStorage.save(key: DefaultsConstants.snackTime.rawValue, value: snackTime!)
         let lunchTime = lunchTimeInput.text
-        saveData(key: "lunchTime", value: lunchTime!)
+        DefaultsStorage.save(key: DefaultsConstants.lunchTime.rawValue, value: lunchTime!)
         let snackTwo = snackTwoTimeInput.text
-        saveData(key: "snackTwoTime", value: snackTwo!)
+        DefaultsStorage.save(key: DefaultsConstants.snackTwo.rawValue, value: snackTwo!)
         let dinner = dinnerTimeInput.text
-        saveData(key: "dinnerTime", value: dinner!)
+        DefaultsStorage.save(key: DefaultsConstants.dinner.rawValue, value: dinner!)
         
         if let tabBarController = self.tabBarController{
-            tabBarController.selectedIndex = 1
+            tabBarController.selectedIndex = 0
         }else{
             let viewController = ZanizimoTabBarController()
             self.present(viewController, animated: true, completion: nil)
         }
-    }
-    
-    func saveData(key:String,value:String){
-        let defaults = UserDefaults.standard
-        defaults.set(value, forKey: "com.mx.rictar.Zanizimo.\(key)")
-        
     }
     
     func passFocus(textField:UITextField) {
@@ -206,8 +206,6 @@ class FormViewController: UIViewController {
         }
         
     }
-    
-
 }
 
 extension FormViewController: UITextFieldDelegate {

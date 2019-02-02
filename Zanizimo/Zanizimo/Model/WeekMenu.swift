@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WeekMenu {
+struct WeekMenu:Codable {
     let weekNumber:Int
     var weekMenu:[DayMenu]
     
@@ -19,16 +19,9 @@ struct WeekMenu {
     
     func getMenuForDay(day:Int) -> DayMenu? {
         if let food = self.weekMenu.first(where: {$0.dayNumber == day}) {
-            //food.dayMenu[0].check()
-            
             return food
         }
-        
-        
         return nil
-        
-
-        
     }
     
     mutating func check(day:Int,meal:Int){

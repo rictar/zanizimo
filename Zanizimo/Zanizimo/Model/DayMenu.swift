@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DayMenu {
+struct DayMenu:Codable {
     
     let dayNumber:Int
     var dayMenu:[Meal]

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum TypeMeal: Int {
+enum TypeMeal: Int,Codable {
     case breakfast = 0, snackOne, lunch, snackTwo,dinner, total
     
     func name() ->String {

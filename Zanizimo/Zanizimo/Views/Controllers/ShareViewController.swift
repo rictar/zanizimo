@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabFourViewController: UIViewController {
+class ShareViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

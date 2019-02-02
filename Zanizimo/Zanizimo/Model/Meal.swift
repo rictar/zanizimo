@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Meal {
+struct Meal:Codable {
     let name : String
     let classification : String
     var isChecked : Bool?
@@ -26,12 +26,12 @@ struct Meal {
         self.ingredients = ingredients
     }
     
-    var imageURL: URL? {
+    private var imageURL: URL? {
         guard let url = imageUrlString else { return nil }
         return URL(string: url)
     }
     
-    var imageData: Data? {
+    private var imageData: Data? {
         guard let url = imageURL else { return nil }
         do {
             return try Data(contentsOf: url)

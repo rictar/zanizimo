@@ -24,8 +24,6 @@ struct SlideModel{
         slide.labelDesc.textColor = UIColor.white
         if isVisible {
             slide.buttonNext.setTitle(buttonTitle, for: .normal)
-            //slide.delegate = ViewController
-            //slide.buttonNext.addTarget(self, action: #selector(self.notification), for: .touchUpInside)
         }else{
             slide.buttonNext.removeFromSuperview()
         }

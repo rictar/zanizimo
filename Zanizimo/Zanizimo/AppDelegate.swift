@@ -16,17 +16,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // this should be your initial view controller
+        StorageType.permanent.ensureExists()
+        StorageType.cache.ensureExists()
+        
+        let res = CodableStorage<WeekMenu>.permanent(filename: "weekMenu.json").load()
+        
+        
+        if res == nil{
+            //Se guarda la primera vez
+            let weekMenu  = MealMock.createWeekMenu()
+            CodableStorage<WeekMenu>.permanent(filename: "weekMenu.json").save(data: weekMenu)
+        }
+        
+        
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         let defaults = UserDefaults.standard
         if !defaults.bool(forKey: "walkthroughSeen") {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "viewController")
             window?.rootViewController =  vc
             defaults.set(true, forKey: "walkthroughSeen")
         }else{
             window?.rootViewController =  ZanizimoTabBarController()
-            defaults.set(false, forKey: "walkthroughSeen")
         }
         window?.makeKeyAndVisible()
         

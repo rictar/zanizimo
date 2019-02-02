@@ -19,13 +19,7 @@ class OnboardingViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
-    
     var slides:[Slide] = [];
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         slides = createSlides()
@@ -81,10 +75,6 @@ class OnboardingViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Form", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "formViewController")
         self.present(controller, animated: true, completion: nil)
-        
-        
-        //let nextVC = FormViewController()
-        //self.present(nextVC, animated: false, completion: nil)
     }
     
     @objc func notification(){
@@ -130,11 +120,6 @@ class OnboardingViewController: UIViewController {
 }
 
 extension OnboardingViewController:UIScrollViewDelegate{
-    /*
-     * default function called when view is scolled. In order to enable callback
-     * when scrollview is scrolled, the below code needs to be called:
-     * slideScrollView.delegate = self or
-     */
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         pageControl.currentPage = Int(pageIndex)
@@ -149,16 +134,6 @@ extension OnboardingViewController:UIScrollViewDelegate{
         let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
         let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
         
-        
-        /*
-         * below code changes the background color of view on paging the scrollview
-         */
-        //        self.scrollView(scrollView, didScrollToPercentageOffset: percentageHorizontalOffset)
-        
-        
-        /*
-         * below code scales the imageview on paging the scrollview
-         */
         let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
         
         if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
@@ -180,29 +155,6 @@ extension OnboardingViewController:UIScrollViewDelegate{
         }
     }
     
-    
-    
-    
-    //    func scrollView(_ scrollView: UIScrollView, didScrollToPercentageOffset percentageHorizontalOffset: CGFloat) {
-    //        if(pageControl.currentPage == 0) {
-    //            //Change background color to toRed: 103/255, fromGreen: 58/255, fromBlue: 183/255, fromAlpha: 1
-    //            //Change pageControl selected color to toRed: 103/255, toGreen: 58/255, toBlue: 183/255, fromAlpha: 0.2
-    //            //Change pageControl unselected color to toRed: 255/255, toGreen: 255/255, toBlue: 255/255, fromAlpha: 1
-    //
-    //            let pageUnselectedColor: UIColor = fade(fromRed: 255/255, fromGreen: 255/255, fromBlue: 255/255, fromAlpha: 1, toRed: 103/255, toGreen: 58/255, toBlue: 183/255, toAlpha: 1, withPercentage: percentageHorizontalOffset * 3)
-    //            pageControl.pageIndicatorTintColor = pageUnselectedColor
-    //
-    //
-    //            let bgColor: UIColor = fade(fromRed: 19/255, fromGreen: 21/255, fromBlue: 47/255, fromAlpha: 1, toRed: 255/255, toGreen: 255/255, toBlue: 255/255, toAlpha: 1, withPercentage: percentageHorizontalOffset * 3)
-    //            slides[pageControl.currentPage].backgroundColor = bgColor
-    //
-    //            let pageSelectedColor: UIColor = fade(fromRed: 81/255, fromGreen: 36/255, fromBlue: 152/255, fromAlpha: 1, toRed: 103/255, toGreen: 58/255, toBlue: 183/255, toAlpha: 1, withPercentage: percentageHorizontalOffset * 3)
-    //            pageControl.currentPageIndicatorTintColor = pageSelectedColor
-    //        }
-    //
-    //    }
-    
-    
     func fade(fromRed: CGFloat,
               fromGreen: CGFloat,
               fromBlue: CGFloat,
@@ -218,7 +170,6 @@ extension OnboardingViewController:UIScrollViewDelegate{
         let blue: CGFloat = (toBlue - fromBlue) * percentage + fromBlue
         let alpha: CGFloat = (toAlpha - fromAlpha) * percentage + fromAlpha
         
-        // return the fade colour
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
 
