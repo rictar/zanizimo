@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,16 +16,16 @@
             <objects>
                 <viewController storyboardIdentifier="viewController" id="BYZ-38-t0r" userLabel="Onboarding Screen" customClass="OnboardingViewController" customModule="Zanizimo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="cjE-4W-sJv">
-                                <rect key="frame" x="160" y="623.5" width="55" height="37"/>
+                                <rect key="frame" x="179.5" y="816.5" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.31764705879999999" green="0.21176470589999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.31764705879999999" green="0.21176470589999999" blue="0.56078431370000004" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ba-p7-mPK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" name="Purple"/>
                                 <color key="tintColor" name="Orange"/>
                                 <connections>
@@ -35,12 +35,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6ba-p7-mPK" secondAttribute="bottom" id="6Pi-Uo-Pz8"/>
                             <constraint firstItem="cjE-4W-sJv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="F0n-GB-AnB"/>
-                            <constraint firstItem="6ba-p7-mPK" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-10" id="JkP-Uk-jlE"/>
-                            <constraint firstItem="6ba-p7-mPK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UYt-jJ-5aN"/>
+                            <constraint firstItem="6ba-p7-mPK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Hhc-GN-MpN"/>
+                            <constraint firstItem="6ba-p7-mPK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ill-6V-ENW"/>
+                            <constraint firstItem="6ba-p7-mPK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lef-SD-Mls"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cjE-4W-sJv" secondAttribute="bottom" multiplier="1.01" id="Y5T-cy-rDa"/>
-                            <constraint firstItem="6ba-p7-mPK" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="baG-eW-2G3"/>
-                            <constraint firstItem="6ba-p7-mPK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="xoX-jf-pRg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

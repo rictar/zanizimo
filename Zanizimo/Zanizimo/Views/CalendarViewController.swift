@@ -8,14 +8,6 @@
 
 import UIKit
 
-let FoodData = [
-    ["foodName": "Huevo con Jamon", "schedule": "7:00 - 9:00", "meal": "breakfast"],
-    ["foodName": "Pepino", "schedule": "10:00 - 11:00", "meal": "snackOne"],
-    ["foodName": "Pechuga Asada", "schedule": "13:30 - 14:30 ", "meal": "lunch"],
-    ["foodName": "Cacahuates", "schedule": "17:00 - 16:00", "meal": "snackTwo"],
-    ["foodName": "Gelatina", "schedule": "21:00 - 22:00", "meal": "dinner"]
-]
-
 class CalendarViewController: UIViewController {
     
     var tableView: UITableView!
@@ -26,11 +18,15 @@ class CalendarViewController: UIViewController {
     
     var selectedIndex = Calendar.current.component(.weekday, from: Date())
     
+    var selectedMeal = 0
+    
     var containerView = UIView(frame: CGRect.zero)
     
     let sectionHeaderHeight: CGFloat = 20
+    //Cambiar por DayMenu
+    //var data = [TypeMeal: [[String: String]]]()
     
-    var data = [TableSection: [[String: String]]]()
+    var weekMenu : WeekMenu!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +36,8 @@ class CalendarViewController: UIViewController {
             setupContainerView()
             didSetupview = true
             //MockData
-            sortData()
+            weekMenu = MealMock.createWeekMenu()
+            //sortData()
         }
         
         self.navigationController?.navigationBar.barStyle = .blackOpaque
@@ -50,7 +47,8 @@ class CalendarViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController!.navigationBar.addSubview(containerView)
+        self.navigationController?.navigationBar.addSubview(containerView)
+//        navigationController!.navigationBar.addSubview(containerView)
         tableView.reloadData()
     }
     
@@ -115,13 +113,13 @@ class CalendarViewController: UIViewController {
     }
     
     //MockData
-    func sortData() {
-        data[.breakfast] = FoodData.filter({ $0["meal"] == "breakfast" })
-        data[.snackOne] = FoodData.filter({ $0["meal"] == "snackOne" })
-        data[.lunch] = FoodData.filter({ $0["meal"] == "lunch" })
-        data[.snackTwo] = FoodData.filter({ $0["meal"] == "snackTwo" })
-        data[.dinner] = FoodData.filter({ $0["meal"] == "dinner" })
-    }
+//    func sortData() {
+//        data[.breakfast] = FoodData.filter({ $0["meal"] == "breakfast" })
+//        data[.snackOne] = FoodData.filter({ $0["meal"] == "snackOne" })
+//        data[.lunch] = FoodData.filter({ $0["meal"] == "lunch" })
+//        data[.snackTwo] = FoodData.filter({ $0["meal"] == "snackTwo" })
+//        data[.dinner] = FoodData.filter({ $0["meal"] == "dinner" })
+//    }
     
     @objc func buttonTapped(_ sender: DayButton) {
         let newIndex = buttons.index(of: sender) ?? 0
@@ -153,7 +151,7 @@ class CalendarViewController: UIViewController {
 extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return TableSection.total.rawValue
+        return TypeMeal.total.rawValue
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -170,7 +168,7 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         let label = UILabel(frame: CGRect(x: 15, y: 0, width: tableView.bounds.width - 30, height: sectionHeaderHeight))
         label.font = UIFont.boldSystemFont(ofSize: 15)
         label.textColor = UIColor.black
-        if let tableSection = TableSection(rawValue: section) {
+        if let tableSection = TypeMeal(rawValue: section) {
             label.text = tableSection.name()
         }
         view.addSubview(label)
@@ -199,38 +197,67 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
             }
             return cell
         }()
-        if let tableSection = TableSection(rawValue: indexPath.section), let food = data[tableSection]?[indexPath.row] {
-            if let titleLabel = cell.textLabel {
-                titleLabel.text = food["foodName"]
-                titleLabel.textColor = UIColor.white
-                titleLabel.backgroundColor = UIColor.clear
-            }
-            if let subtitleLabel = cell.detailTextLabel {
-                subtitleLabel.text = food["schedule"]
-                subtitleLabel.textColor = UIColor.white
-                subtitleLabel.backgroundColor = UIColor.clear
-            }
-            cell.backgroundView = UIImageView(image: UIImage(named: "imagen1"))
+        let dayMenu = weekMenu.getMenuForDay(day: selectedIndex)
+        if let food = dayMenu?.dayMenu[indexPath.section] {
+//            food.isChecked = true
             
-            checkCell(cell)
+            
+            if let titleLabel = cell.textLabel {
+                titleLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
+                titleLabel.text = food.name
+                titleLabel.textColor = UIColor(named: "Purple")
+                titleLabel.backgroundColor = UIColor.orange
+                titleLabel.layer.cornerRadius = 8.0
+                titleLabel.layer.cornerRadius = 10
+                titleLabel.clipsToBounds = true
+            }
+//            if let subtitleLabel = cell.detailTextLabel {
+//                //Mark
+//                //Recover information from UserDefault
+//                let defaults = UserDefaults.standard
+//
+//                subtitleLabel.text = defaults.string(forKey: "com.mx.rictar.Zanizimo.\(food.typeMeal.getKeyName())")
+//                subtitleLabel.textColor = UIColor.black
+//                subtitleLabel.backgroundColor = UIColor.clear
+//            }
+            food.getImage { [weak cell] (img) in
+                cell?.backgroundView = UIImageView(image: img)
+            }
+            //cell.backgroundView = UIImageView(image: UIImage(named: "imagen1"))
+            if food.isChecked ?? false{
+                checkCell(cell)
+            }
+            
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 120
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let tableSection = TableSection(rawValue: indexPath.section), let food = data[tableSection]?[indexPath.row] {
+        var dayMenu = weekMenu.getMenuForDay(day: selectedIndex)
+        if let food = dayMenu?.dayMenu[indexPath.section] {
+            selectedMeal = indexPath.section
             tableView.deselectRow(at: indexPath, animated: true)
             containerView.removeFromSuperview()
             let viewController = DetailMenuViewController()
-            viewController.label = food["foodName"]
+            viewController.delegate = self
+            viewController.meal = food
+            let defaults = UserDefaults.standard
+            viewController.schedule = defaults.string(forKey: "com.mx.rictar.Zanizimo.\(food.typeMeal.getKeyName())")
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         
     }
+}
+
+extension CalendarViewController:MealDelegate{
+    func checkMeal() {
+        weekMenu.check(day: selectedIndex, meal: selectedMeal)
+    }
+    
     
 }

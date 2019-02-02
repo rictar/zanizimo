@@ -41,12 +41,10 @@ class ContentView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         NSLayoutConstraint.activate([
-            dayLabel.centerXAnchor.constraint(equalToSystemSpacingAfter: self.centerXAnchor, multiplier: 1.0),
+            dayNameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            dayNameLabel.bottomAnchor.constraint(equalTo: dayLabel.topAnchor, constant: 3.0),
             dayLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 7.0),
-            dayLabel.topAnchor.constraint(equalTo: dayNameLabel.bottomAnchor, constant: 3.0),
-            dayNameLabel.centerXAnchor.constraint(equalToSystemSpacingAfter: dayLabel.centerXAnchor, multiplier: 1.0),
-            
-            
+            dayLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
             ])
     }
     

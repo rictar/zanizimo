@@ -32,7 +32,7 @@ struct FoodValidator {
         let confidence = result.prob["\(result.classLabel)"]! * 100.0
         
         
-        return confidence >= 75
+        return confidence >= 10
     }
     
     

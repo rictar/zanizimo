@@ -29,6 +29,10 @@ extension Date{
         return Calendar.current.component(.day, from: self)
     }
     
+    func weekNumberInYear() -> Int{
+        return Calendar.current.component(.weekOfYear, from: self)
+    }
+    
     func isCurrentDay() -> Bool{
         let currentDay = Calendar.current.component(.day, from: Date())
         let day = Calendar.current.component(.day, from: self)

@@ -29,9 +29,9 @@ class ZanizimoTabBarController: UITabBarController {
         
         
         // Create Tab two
-        let tabTwo = TabTwoViewController()
+        let storyboard = UIStoryboard(name: "Form", bundle: nil)
+        let tabTwo = storyboard.instantiateViewController(withIdentifier: "formViewController")
         let tabTwoBarItem2 = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), selectedImage: UIImage(named: "settings"))
-        
         tabTwo.tabBarItem = tabTwoBarItem2
         
         // Create Tab two

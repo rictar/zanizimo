@@ -11,9 +11,19 @@ import UIKit
 class DetailMenuview: UIView {
     
     private var didSetupConstraints = false
-    var myLabel = UILabel(frame: CGRect.zero)
-    var imageView = UIImageView(image: UIImage(named: "imagen1"))
-    private let button = UIButton(type: UIButton.ButtonType.custom)
+    
+    var imageView:UIImageView!
+    
+//    var nameLabel : UILabel!
+//    var scheduleLabel : UILabel!
+//    var typeMealLabel : UILabel!
+    
+//    var stackView : UIStackView!
+    var tableView: UITableView!
+//    var ingredients : UITextView!
+    var button : UIButton!
+    
+    
     
     weak var delegate: DetailMenuviewDelegate?
     
@@ -26,28 +36,80 @@ class DetailMenuview: UIView {
         super.init(coder: aDecoder)
         self.setup()
     }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
     private func setup() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = UIColor(named: "Purple")
         self.clipsToBounds = true
-        setupImages()
+        setupView()
         self.setNeedsUpdateConstraints()
     }
     
     
-    func setupImages() {
-        myLabel.text = "Name"
-        myLabel.textColor = UIColor.white
-        myLabel.translatesAutoresizingMaskIntoConstraints = false
+    func setupView() {
         
+//        var myLabel = UILabel(frame: CGRect.zero)
+//        var imageView = UIImageView(image: UIImage(named: "imagen1"))
+//        var button = UIButton(type: UIButton.ButtonType.custom)
+        
+//        nameLabel = UILabel(frame: CGRect.zero)
+//        nameLabel.text = "nameLabel"
+//        nameLabel.textColor = UIColor.white
+//        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+//
+//        scheduleLabel = UILabel(frame: CGRect.zero)
+//        scheduleLabel.text = "scheduleLabel"
+//        scheduleLabel.textColor = UIColor.white
+//        scheduleLabel.translatesAutoresizingMaskIntoConstraints = false
+//
+//        typeMealLabel = UILabel(frame: CGRect.zero)
+//        typeMealLabel.text = "nameLabel"
+//        typeMealLabel.textColor = UIColor.white
+//        typeMealLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        button = UIButton(type: UIButton.ButtonType.custom)
         button.setTitle("Take food photo", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor.orange
+        button.layer.cornerRadius = 10
+        button.clipsToBounds = true
+        
         button.addTarget(self, action: #selector(DetailMenuview.takePhoto), for: .touchUpInside)
+        
+        imageView = UIImageView(image: UIImage(named: "imagen1"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
+//        stackView = UIStackView(arrangedSubviews: [nameLabel,scheduleLabel,typeMealLabel])
+//        stackView.alignment = .fill
+//        stackView.distribution = .fill
+//        stackView.axis = .vertical
+//        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        tableView = UITableView()
+        tableView.backgroundColor = UIColor(named: "Purple")
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        //ingredients = UITextView(frame: CGRect(x: 20.0, y: 90.0, width: 250.0, height: 100.0))
+//        ingredients.automaticallyAdjustsScrollViewInsets = false
+        
+//        ingredients.center = self.view.center
+//        ingredients = UITextView()
+        
+//        ingredients.textAlignment = NSTextAlignment.justified
+        
+//        ingredients.backgroundColor = UIColor.lightGray
+        
+//        ingredients.textColor = UIColor.white
+//        ingredients.translatesAutoresizingMaskIntoConstraints = false
+//        ingredients.text = "Muhcos ingredients"
+        
+        tableView.tableFooterView = UIView(frame: .zero)
         self.addSubview(imageView)
-        self.addSubview(myLabel)
+//        self.addSubview(stackView)
+//        self.addSubview(ingredients)
+        self.addSubview(tableView)
         self.addSubview(button)
     }
     
@@ -64,14 +126,19 @@ class DetailMenuview: UIView {
         
         NSLayoutConstraint.activate([
             
-            imageView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 22),
-            imageView.centerXAnchor.constraint(equalToSystemSpacingAfter: self.safeAreaLayoutGuide.centerXAnchor, multiplier: 1.0),
-            imageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 164),
-            imageView.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor),
-            myLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 7.0),
-            myLabel.centerXAnchor.constraint(equalToSystemSpacingAfter: imageView.centerXAnchor, multiplier: 1.0),
-            button.centerXAnchor.constraint(equalToSystemSpacingAfter: myLabel.centerXAnchor, multiplier: 1.0),
-            self.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: button.bottomAnchor , multiplier: 1.0),
+            imageView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -87),
+            self.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: button.bottomAnchor , constant: 30.0),
+            imageView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 110),
+            imageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
+            imageView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 200),
+            tableView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: 0),
+            tableView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 0),
+            tableView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 70),
+            button.topAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 1.0),
+            button.centerXAnchor.constraint(equalTo: self.layoutMarginsGuide.centerXAnchor)
+
+            
+            
             ])
     }
     
@@ -82,6 +149,34 @@ class DetailMenuview: UIView {
     
     @objc func takePhoto() {
         self.delegate?.takePhoto()
+    }
+    
+    
+    weak var delegateTableView: UITableViewDelegate? {
+        get {
+            return tableView.delegate
+        }
+        set {
+            tableView.delegate = newValue
+        }
+    }
+
+
+    weak var dataSource: UITableViewDataSource? {
+        get {
+            return tableView.dataSource
+        }
+        set {
+            tableView.dataSource = newValue
+        }
+    }
+
+    func registerClass(cellClass: AnyClass?, forCellReuseIdentifier identifier: String) {
+        tableView.register(cellClass, forCellReuseIdentifier: identifier)
+    }
+
+    func dequeueReusableCellWithIdentifier(identifier: String) -> UITableViewCell? {
+        return tableView.dequeueReusableCell(withIdentifier: identifier)
     }
     
 }

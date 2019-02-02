@@ -13,8 +13,12 @@ import AVFoundation
 class DetailMenuViewController: UIViewController {
     
     var detailMenu:DetailMenuview!
-    //Change for model to draw view
-    var label:String!
+    var meal:Meal!
+    var schedule:String!
+    
+    var mealTable : [MealTable]!
+    
+    weak var delegate: MealDelegate?
     
     private var userTakePhoto = false {
         didSet {
@@ -39,9 +43,19 @@ class DetailMenuViewController: UIViewController {
         let save = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(DetailMenuViewController.save))
         self.navigationItem.rightBarButtonItem = save
         save.isEnabled = userTakePhoto
-        
         detailMenu = DetailMenuview()
-        detailMenu.myLabel.text = label
+        detailMenu.delegateTableView = self
+        detailMenu.tableView.register(UINib(nibName: "MealTableViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
+        detailMenu.dataSource = self
+        detailMenu.delegateTableView = self
+        meal.getImage { [weak self] img in
+            self?.detailMenu.imageView.image = img
+        }
+        
+        if meal.isChecked!{
+            detailMenu.button.isEnabled = true
+        }
+        
         view.addSubview(detailMenu)
         detailMenu.translatesAutoresizingMaskIntoConstraints = false
         let guide = view.safeAreaLayoutGuide
@@ -52,6 +66,9 @@ class DetailMenuViewController: UIViewController {
             guide.trailingAnchor.constraint(equalToSystemSpacingAfter: detailMenu.trailingAnchor, multiplier: 0.0)
             ])
         detailMenu.delegate = self
+        
+        mealTable = meal.transformToViewMeal(schedule: schedule)
+        
     }
     
     
@@ -62,7 +79,9 @@ class DetailMenuViewController: UIViewController {
         let isValid = FoodValidator.sharedInstance.processImage(image)
         
         if isValid{
+            delegate?.checkMeal()
             navigationController?.popViewController(animated: true)
+            
         }
         
         let alert = UIAlertController(title: "Error", message: "The captured image does not correspond with food", preferredStyle: .alert)
@@ -148,8 +167,51 @@ extension DetailMenuViewController:DetailMenuviewDelegate{
         
         present(alert, animated: true, completion: nil)
     }
+}
+
+
+extension DetailMenuViewController:UITableViewDelegate, UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return mealTable.count
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if mealTable[section].sectionLabel != nil{
+            return 1
+        }else{
+            return mealTable[section].sectionObjects.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+            return mealTable[section].sectionName
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = self.detailMenu.tableView.dequeueReusableCell(withIdentifier: "detailCell") as! MealTableViewCell
+        
+        cell.backgroundColor = UIColor.init(named: "Purple")
+        
+        
+        if let text = mealTable[indexPath.section].sectionLabel {
+            cell.nameLabel.text = text
+            cell.descriptionLabel.text = ""
+            cell.nameLabel.textColor = UIColor.white
+            cell.descriptionLabel.textColor = UIColor.white
+        }else{
+            let mealCell = mealTable[indexPath.section].sectionObjects[indexPath.row]
+            cell.nameLabel.text = mealCell.name
+            cell.descriptionLabel.text = mealCell.description
+            cell.nameLabel.textColor = UIColor.white
+            cell.descriptionLabel.textColor = UIColor.white
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
     
     
 }
-

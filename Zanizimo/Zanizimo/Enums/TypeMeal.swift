@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum TableSection: Int {
+enum TypeMeal: Int {
     case breakfast = 0, snackOne, lunch, snackTwo,dinner, total
     
     func name() ->String {
@@ -24,6 +24,25 @@ enum TableSection: Int {
             return "Snack Two"
         case .dinner:
             return "Dinner"
+        default:
+            return ""
+        }
+        
+    }
+    
+    func getKeyName() ->String {
+        
+        switch self {
+        case .breakfast:
+            return "breakfastTime"
+        case .snackOne:
+            return "snackTime"
+        case .lunch:
+            return "lunchTime"
+        case .snackTwo:
+            return "snackTwoTime"
+        case .dinner:
+            return "dinnerTime"
         default:
             return ""
         }

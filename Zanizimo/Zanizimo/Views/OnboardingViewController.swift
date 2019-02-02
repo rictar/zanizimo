@@ -78,8 +78,13 @@ class OnboardingViewController: UIViewController {
     }
     
     @objc func nextView(){
-        let nextVC = FormViewController()
-        self.present(nextVC, animated: false, completion: nil)
+        let storyboard = UIStoryboard(name: "Form", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "formViewController")
+        self.present(controller, animated: true, completion: nil)
+        
+        
+        //let nextVC = FormViewController()
+        //self.present(nextVC, animated: false, completion: nil)
     }
     
     @objc func notification(){

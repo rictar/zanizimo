@@ -33,12 +33,18 @@ class DayButton: UIButton {
     
     private func setup() {
         selectionIndicatorView.isUserInteractionEnabled = false
-        selectionIndicatorView.backgroundColor = .clear
+//        selectionIndicatorView.backgroundColor = .clear
+        //selectionIndicatorView.backgroundColor = UIColor.orange
+//        contentView.layer.cornerRadius = 15
+//        self.layer.cornerRadius = 15
+        //selectionIndicatorView.layer.cornerRadius = 30
+        selectionIndicatorView.layer.cornerRadius = 20
+        self.clipsToBounds = true
         selectionIndicatorView.layer.masksToBounds = false
-        selectionIndicatorView.layer.shadowColor = UIColor.white.cgColor
-        selectionIndicatorView.layer.shadowOpacity = 1.0
-        selectionIndicatorView.layer.shadowRadius = 1.0
-        selectionIndicatorView.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        selectionIndicatorView.layer.shadowColor = UIColor.white.cgColor
+//        selectionIndicatorView.layer.shadowOpacity = 1.0
+//        selectionIndicatorView.layer.shadowRadius = 1.0
+//        selectionIndicatorView.layer.shadowOffset = CGSize(width: 0, height: 0)
         addSubview(selectionIndicatorView)
         selectionIndicatorView.isHidden = false
         
@@ -56,13 +62,15 @@ class DayButton: UIButton {
     
     override var isHighlighted: Bool {
         didSet {
-            contentView.alpha = isHighlighted ? 0.3 : 1.0
+            //selectionIndicatorView.backgroundColor = UIColor.orange
+            //contentView.alpha = isHighlighted ? 0.3 : 1.0
         }
     }
     
     override var isSelected: Bool {
         didSet {
-            selectionIndicatorView.layer.shadowColor = isSelected ?UIColor.orange.cgColor:UIColor.white.cgColor
+            selectionIndicatorView.backgroundColor = isSelected ? UIColor.orange : UIColor.clear
+//            selectionIndicatorView.layer.shadowColor = isSelected ?UIColor.orange.cgColor:UIColor.white.cgColor
         }
     }
     
