@@ -11,7 +11,7 @@ import Foundation
 class MenuService {
     static let shared = MenuService()
     
-    let client = Client(baseURLComponents: URLComponents(string: "")!)
+    let client = Client(baseURLComponents: URLComponents(string: "https://hidden-anchorage-43371.herokuapp.com")!)
     
     func all(completion: @escaping (WeekMenu) -> Void) {
         
@@ -19,7 +19,7 @@ class MenuService {
             completion(res)
         }
         
-        client.get(path: "") { data in
+        client.get(path: "/WeekMenu") { data in
             guard let data = data else { return }
             if let result = try? JSONDecoder().decode(WeekMenu.self, from: data) {
                 CodableStorage<WeekMenu>.permanent(filename: "weekMenu.json").save(data: result)

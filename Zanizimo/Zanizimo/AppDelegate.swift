@@ -19,14 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         StorageType.permanent.ensureExists()
         StorageType.cache.ensureExists()
         
-        let res = CodableStorage<WeekMenu>.permanent(filename: "weekMenu.json").load()
+        //let res = CodableStorage<WeekMenu>.permanent(filename: "weekMenu.json").load()
+        //        let weekMenu = MealMock.createWeekMenu()
         
-        
-        if res == nil{
-            //Se guarda la primera vez
-            let weekMenu  = MealMock.createWeekMenu()
+        //        if res == nil{
+        //Se guarda la primera vez
+        MenuService.shared.all { menus in
+            let weekMenu = menus
             CodableStorage<WeekMenu>.permanent(filename: "weekMenu.json").save(data: weekMenu)
         }
+        
+        //        }
         
         
         
